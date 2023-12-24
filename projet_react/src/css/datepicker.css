@@ -1,0 +1,45 @@
+/* General input styles */
+#create-employee input[type="text"],
+#create-employee .MuiInputBase-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 20px; /* Match the margin of other labels if necessary */
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* DatePicker specific styles */
+#create-employee .MuiTextField-root {
+    width: 100%;
+    margin-top: 20px; 
+}
+
+#create-employee .MuiInputBase-root {
+    width: 100%; 
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    padding: 8px; 
+    font-size: 1rem; 
+}
+
+#create-employee .MuiOutlinedInput-notchedOutline {
+    border: none; 
+}
+
+#create-employee .Mui-focused .MuiOutlinedInput-notchedOutline {
+    border: none; 
+}
+
+#create-employee .MuiOutlinedInput-root.Mui-focused {
+    box-shadow: none;
+}
+
+#create-employee .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border: none;
+}
+
+#create-employee .MuiInputAdornment-positionEnd {
+    margin-left: -32px; 
+}

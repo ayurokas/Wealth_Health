@@ -5,6 +5,8 @@ import { addEmployee } from "../Redux/reducers/employer";
 import '../css/style.css';
 import states from "../Data/data_states";
 import departments from "../Data/data_departments";
+import CustomDropdown from "@ayurokas/dropdown_package"
+import Modal from '../Composant/Modal';
 
 export default function Form() {
   const [firstName, setFirstName] = useState("");
@@ -112,6 +114,7 @@ export default function Form() {
             dateFormat="dd/MM/yyyy"
             selected={dateBirth}
             onChange={(date) => setDateBirth(date)}
+            id="dateBirth" 
           />
           {errors.dateBirth && <div className="error">{errors.dateBirth}</div>}
         </label>
@@ -121,6 +124,7 @@ export default function Form() {
             dateFormat="dd/MM/yyyy"
             selected={startDate}
             onChange={(date) => setStartDate(date)}
+            id="startDate"
           />
           {errors.startDate && <div className="error">{errors.startDate}</div>}
         </label>
@@ -135,7 +139,11 @@ export default function Form() {
             {errors.city && <div className="error">{errors.city}</div>}
           </label>
           <label>State
-            <CustomDropdown options={states.map(el => ({ label: el.name, value: el.abbreviation }))} onChange={(e) => setState(e.value)} placeholder="Select a state" />
+          <CustomDropdown
+              options={states.map(el => ({ label: el.name, value: el.value }))}
+              onChange={option => setState(option.value)}
+              placeholder="Select a state"
+            />
             {errors.state && <div className="error">{errors.state}</div>}
           </label>
           <label>Zip Code
@@ -144,19 +152,18 @@ export default function Form() {
           </label>
         </fieldset>
         <label>Department
-          <CustomDropdown options={departments.map(el => ({ label: el.name, value: el.abbreviation }))} onChange={(e) => setDepartment(e.value)} placeholder="Select a Department" />
+        <CustomDropdown
+            options={departments.map(el => ({ label: el.name, value: el.value }))}
+            onChange={option => setDepartment(option.value)}
+            placeholder="Select a Department"
+          />
           {errors.department && <div className="error">{errors.department}</div>}
         </label>
         <input type="submit" value="Submit" />
       </form>
-      {showModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={handleCloseModal}>&times;</span>
-            <p>Employee Created!</p>
-          </div>
-        </div>
-      )}
-    </div>
-  );
+      <Modal isOpen={showModal} onClose={handleCloseModal}>
+      <div>Lemployé a été créé avec succès !</div>
+    </Modal>
+  </div>
+);
 }

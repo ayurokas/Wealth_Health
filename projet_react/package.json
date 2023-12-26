@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ayurokas/dropdown_package": "^0.1.6",
     "@date-io/date-fns": "^2.17.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -13,9 +14,9 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "at-npm-modal-package": "^0.1.6",
     "dayjs": "^1.11.10",
     "material-react-table": "^2.0.5",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-datepicker": "^4.25.0",
     "react-dom": "^18.2.0",
@@ -51,6 +52,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "eslint-plugin-react": "^7.33.2"
   }
 }

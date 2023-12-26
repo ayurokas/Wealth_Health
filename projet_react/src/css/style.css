@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 .main-header {
   background-color: #6f870f;
   padding: 10px 20px; 
@@ -11,15 +12,18 @@
   position: relative;
 }
 
+
 .title h1 {
   margin: 0;
   color: white; 
 }
 
+
 .container {
   text-align: center; 
   margin-top: 20px;
 }
+
 
 .main-header .view-employees-link {
   position: absolute;
@@ -30,9 +34,11 @@
   color: white;
 }
 
+
 .container h2, .container h4 {
   margin: 10px 0; 
 }
+
 
 .header-logo {
   height: 50px;
@@ -61,6 +67,7 @@
   margin: 5px 0 15px;
   font-size: 1rem; 
 }
+
 
 #create-employee input[type="submit"] {
   padding: 10px 15px;

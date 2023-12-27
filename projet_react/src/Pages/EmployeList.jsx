@@ -2,12 +2,14 @@ import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { MaterialReactTable } from "material-react-table";
+import "../css/employelist.css"
 
 import { employeeTab } from "../Redux/reducers/employer";
 
 export default function ListEmployee() {
   const employeesList = useSelector(employeeTab);
   console.log(employeesList);
+  // Définition des colonnes pour la table
   const columns = useMemo(
     () => [
       {
@@ -60,7 +62,7 @@ export default function ListEmployee() {
   );
 
   return (
-    <div id="employee-div" className="container">
+    <div id="employee-div" className="container_table">
       <h1>Current Employees</h1>
       {employeesList ? (
         <MaterialReactTable

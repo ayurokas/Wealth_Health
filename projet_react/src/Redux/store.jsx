@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import empSlice from './reducers/employer';
+import empSlice from './reducers/employer'; 
 
+// Configuration du store Redux
 const store = configureStore({
   reducer: {
-    employee: empSlice
+    employee: empSlice, // Utilisation du slice `empSlice` pour gérer l'état des employés
   },
-  
-})
-export default store;
+});
+
+export default store; 

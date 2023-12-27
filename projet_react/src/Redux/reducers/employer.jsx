@@ -1,19 +1,20 @@
-import {createSlice} from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'; 
 
 const initialState = {
-  employees:[],
-}
+  employees: [],
+};
 
 const empSlice = createSlice({
-  name: "employee",
+  name: "employee", 
   initialState,
-  reducers:{
-    addEmployee :(state, action) => { 
-      state.employees.push(action.payload)
-    }
-  }
-})
+  reducers: {
+    addEmployee: (state, action) => {
+      // Reducer pour ajouter un employé à la liste
+      state.employees.push(action.payload); // Ajoute l'employé à la liste d'employés dans l'état
+    },
+  },
+});
 
-export const {addEmployee} = empSlice.actions;
-export const employeeTab = state=>state.employee.employees
+export const { addEmployee } = empSlice.actions; 
+export const employeeTab = (state) => state.employee.employees; 
 export default empSlice.reducer; 

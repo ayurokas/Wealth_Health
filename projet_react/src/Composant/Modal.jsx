@@ -3,6 +3,7 @@ import '../css/modal.css';
 import PropTypes from 'prop-types';
 
 const Modal = ({ isOpen, children, onClose }) => {
+    // Si la modal n'est pas ouverte, retourne null (ne rend rien)
   if (!isOpen) return null;
 
   return (
@@ -14,6 +15,9 @@ const Modal = ({ isOpen, children, onClose }) => {
     </div>
   );
 };
+
+
+// Validation des types de props avec PropTypes
 
 Modal.propTypes = {
   isOpen: PropTypes.bool.isRequired,

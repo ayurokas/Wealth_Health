@@ -1,11 +1,13 @@
 import React, { Suspense } from 'react';
 import { Link } from 'react-router-dom';
-const Form = React.lazy(() => import('../Composant/CreateEmploye')); // Lazy-load the Form component
+import logo from '../img/logo.webp';
+const Form = React.lazy(() => import('../Composant/CreateEmploye')); 
 
 export default function CreateEmployee() {
   return (
     <>
       <header className="main-header">
+      <img src={logo} alt="Wealth Health Logo" />
         <div className="title">
           <h1>WEALTH HEALTH</h1>
         </div>
@@ -15,7 +17,8 @@ export default function CreateEmployee() {
         <div className="container">
           <h2>HRnet</h2>
           <h3>Create Employee</h3>
-          <Suspense fallback={<div>Loading...</div>}> {/* Add Suspense for lazy-loaded components */}
+            {/* Utilisation de Suspense pour le chargement asynchrone du composant Form */}
+          <Suspense fallback={<div>Loading...</div>}>
             <Form />
           </Suspense>
         </div>

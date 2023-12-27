@@ -6,6 +6,8 @@ import TextField from '@mui/material/TextField';
 import '../css/datepicker.css';
 import PropTypes from 'prop-types';
 
+
+// Définition du composant CalendarDatepicker
 const CalendarDatepicker = ({ selected, onChange, id, submitted }) => {
   const isError = submitted && !selected;
 
@@ -31,8 +33,10 @@ const CalendarDatepicker = ({ selected, onChange, id, submitted }) => {
   );
 };
 
+// Validation des types de props avec PropTypes
+
 CalendarDatepicker.propTypes = {
-  selected: PropTypes.any, // You can be more specific about the type
+  selected: PropTypes.any,
   onChange: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
   submitted: PropTypes.bool

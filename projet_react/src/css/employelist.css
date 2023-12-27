@@ -1,0 +1,59 @@
+/* Styles généraux pour les tables et les conteneurs */
+.container_table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #e0f2f1; 
+    
+  }
+  
+  .container_table h1 {
+    color: #00695c; 
+    margin-bottom: 20px; 
+  }
+  
+
+  .material-table {
+    width: 100%;
+    max-width: 1000px; 
+  }
+  
+  .container_table a {
+    text-decoration: none;
+    color: #26a69a; 
+    margin-top: 20px; 
+  }
+  
+  .MuiTableContainer-root {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+  }
+  
+  
+  .MuiTableCell-root {
+    text-align: center;
+    padding: 8px; 
+  }
+  
+  .MuiTableBody-root .MuiTableRow-root:nth-of-type(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  .MuiTableHead-root {
+    background-color: #004d40; 
+    color: white; 
+  }
+  
+  .container_table .home-link {
+    background-color: #26a69a; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px; 
+  }
+  
+  .container_table .home-link:hover {
+    background-color: #2bbbad; 
+  }
+  

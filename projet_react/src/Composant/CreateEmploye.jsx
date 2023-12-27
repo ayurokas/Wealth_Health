@@ -9,6 +9,7 @@ import CustomDropdown from "@ayurokas/dropdown_package"
 import Modal from '../Composant/Modal';
 
 export default function Form() {
+    // Utilisation de useState pour gérer l'état des différents champs du formulaire
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [dateBirth, setDateBirth] = useState(null);
@@ -23,10 +24,11 @@ export default function Form() {
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
 
+  // Fonction de validation du formulaire
   const validateForm = () => {
     let newErrors = {};
     let isValid = true;
-
+    // Vérification de chaque champ du formulaire et ajout d'erreurs si nécessaire
     if (!firstName) {
       isValid = false;
       newErrors.firstName = 'Le prénom est requis.';
@@ -72,6 +74,7 @@ export default function Form() {
       newErrors.department = 'Le département est requis.';
     }
 
+    // Mise à jour de l'état des erreurs
     setErrors(newErrors);
     return isValid;
   };
@@ -79,6 +82,7 @@ export default function Form() {
   const handleSave = (e) => {
     e.preventDefault();
     if (validateForm()) {
+      // Création de l'objet employé à partir des données du formulaire
       const employee = {
         firstName,
         lastName,
@@ -90,44 +94,39 @@ export default function Form() {
         zipCode,
         department,
       };
+      // Envoi de l'action d'ajout d'employé à Redux
       dispatch(addEmployee(employee));
       setShowModal(true);
     }
   };
 
+  // Fonction de gestion de la fermeture de la modal
   const handleCloseModal = () => setShowModal(false);
 
   return (
     <div>
       <form action="#" id="create-employee" onSubmit={handleSave}>
-        <label>First Name
-          <input type="text" onChange={(e) => setFirstName(e.target.value)} />
-          {errors.firstName && <div className="error">{errors.firstName}</div>}
-        </label>
-        <label>Last Name
-          <input type="text" onChange={(e) => setLastName(e.target.value)} />
-          {errors.lastName && <div className="error">{errors.lastName}</div>}
-        </label>
-        <label>
-          Date of Birth
-          <CalendarDatepicker
-            dateFormat="dd/MM/yyyy"
-            selected={dateBirth}
-            onChange={(date) => setDateBirth(date)}
-            id="dateBirth" 
-          />
-          {errors.dateBirth && <div className="error">{errors.dateBirth}</div>}
-        </label>
-        <label>
-          Start Date
-          <CalendarDatepicker
-            dateFormat="dd/MM/yyyy"
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
-            id="startDate"
-          />
-          {errors.startDate && <div className="error">{errors.startDate}</div>}
-        </label>
+        <fieldset className="personal-info">
+          <legend>Informations Personnelles</legend>
+          <label>Prénom
+            <input type="text" onChange={(e) => setFirstName(e.target.value)} />
+            {errors.firstName && <div className="error">{errors.firstName}</div>}
+          </label>
+          <label>Nom
+            <input type="text" onChange={(e) => setLastName(e.target.value)} />
+            {errors.lastName && <div className="error">{errors.lastName}</div>}
+          </label>
+          <label>Date de Naissance
+            <CalendarDatepicker
+              dateFormat="dd/MM/yyyy"
+              selected={dateBirth}
+              onChange={(date) => setDateBirth(date)}
+              id="dateBirth" 
+            />
+            {errors.dateBirth && <div className="error">{errors.dateBirth}</div>}
+          </label>
+        </fieldset>
+
         <fieldset className="address">
           <legend>Address</legend>
           <label>Street
@@ -151,19 +150,31 @@ export default function Form() {
             {errors.zipCode && <div className="error">{errors.zipCode}</div>}
           </label>
         </fieldset>
-        <label>Department
-        <CustomDropdown
-            options={departments.map(el => ({ label: el.name, value: el.value }))}
-            onChange={option => setDepartment(option.value)}
-            placeholder="Select a Department"
-          />
-          {errors.department && <div className="error">{errors.department}</div>}
-        </label>
+        <fieldset className="employment">
+          <legend>Emploi</legend>
+          <label>Date de Début
+            <CalendarDatepicker
+              dateFormat="dd/MM/yyyy"
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              id="startDate"
+            />
+            {errors.startDate && <div className="error">{errors.startDate}</div>}
+          </label>
+          <label>Département
+            <CustomDropdown
+              options={departments.map(el => ({ label: el.name, value: el.value }))}
+              onChange={option => setDepartment(option.value)}
+              placeholder="Select a Department"
+            />
+            {errors.department && <div className="error">{errors.department}</div>}
+          </label>
+        </fieldset>
         <input type="submit" value="Submit" />
       </form>
       <Modal isOpen={showModal} onClose={handleCloseModal}>
-      <div>Lemployé a été créé avec succès !</div>
-    </Modal>
-  </div>
-);
+        <div>Lemployé a été créé avec succès !</div>
+      </Modal>
+    </div>
+  );
 }

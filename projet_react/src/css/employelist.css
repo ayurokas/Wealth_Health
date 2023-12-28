@@ -22,7 +22,7 @@
   
   .container_table a {
     text-decoration: none;
-    color: #26a69a; 
+    color: black; 
     margin-top: 20px; 
   }
   
@@ -44,16 +44,5 @@
   .MuiTableHead-root {
     background-color: #004d40; 
     color: white; 
-  }
-  
-  .container_table .home-link {
-    background-color: #26a69a; 
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 20px; 
-  }
-  
-  .container_table .home-link:hover {
-    background-color: #2bbbad; 
   }
   

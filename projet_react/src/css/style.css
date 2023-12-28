@@ -4,12 +4,14 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
+h1, h2, h3{
+  text-align: center;
+}
 .main-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #004d40; /* Dark teal background */
+  background-color: #004d40;
   color: white;
   padding: 10px 20px;
 }
@@ -20,8 +22,9 @@
 }
 
 .main-header img {
-  height: 50px; /* Logo height */
+  height: 50px; 
   margin-right: 10px;
+  width: auto;
 }
 
 .main-header h1 {
@@ -31,8 +34,8 @@
 
 /* Link to view current employees */
 .view-employees-link {
-  background-color: #26a69a; /* Lighter teal background */
-  color: white;
+  background-color: #26a69a; 
+  color: black;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
@@ -40,16 +43,14 @@
 }
 
 .view-employees-link:hover {
-  background-color: #2bbbad; /* Slightly lighter teal on hover */
+  background-color: #2bbbad; 
 }
 
-/* Main content styles */
 main {
   padding: 20px;
-  background-color: #e0f2f1; /* Very light teal background */
+  background-color: #e0f2f1; 
 }
 
-/* Style du conteneur principal */
 .container {
   border: 5px solid green; 
   background-color: #FFFFFF;
@@ -60,12 +61,10 @@ main {
 }
 
 .container h2, .container h3 {
-  text-align: center;
   margin-bottom: 5px;
 
 }
 
-/* Style des sections du formulaire */
 fieldset {
   margin-bottom: 20px;
   padding: 15px;
@@ -73,13 +72,11 @@ fieldset {
   border-radius: 10px;
 }
 
-/* Titre de chaque section */
 legend {
   font-weight: bold;
   color: green;
 }
 
-/* Style des labels et inputs */
 label {
   display: block;
   margin-bottom: 10px;
@@ -93,7 +90,6 @@ input[type="text"], .custom-dropdown {
   border-radius: 4px;
 }
 
-/* Style du bouton Submit */
 input[type="submit"] {
   background-color: green;
   color: white;

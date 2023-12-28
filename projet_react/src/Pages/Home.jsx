@@ -7,7 +7,7 @@ export default function CreateEmployee() {
   return (
     <>
       <header className="main-header">
-      <img src={logo} alt="Wealth Health Logo" />
+      <img src={logo} alt="Logo Wealth Health" width="300" height="276" />
         <div className="title">
           <h1>WEALTH HEALTH</h1>
         </div>

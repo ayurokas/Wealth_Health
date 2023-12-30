@@ -1,4 +1,4 @@
-export const states = [
+const states = [
     {
       name: "Alabama",
       value: "AL",

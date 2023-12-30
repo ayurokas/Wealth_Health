@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'; 
+import employees from "../../Data/data_employe";
 
 const initialState = {
-  employees: [],
+  employees: employees, // Initialisation de l'état avec les données importées
 };
 
 const empSlice = createSlice({

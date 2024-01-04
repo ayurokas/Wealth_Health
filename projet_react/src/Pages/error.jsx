@@ -1,10 +1,13 @@
-// Ce composant React affiche une page d'erreur 404.
 
 import React from 'react';
 import { NavLink  } from 'react-router-dom';
 import imgError from "../img/404Error.svg";
 import '../css/error.css';
 
+/**
+ * Composant React pour afficher une page d'erreur 404.
+ * @component
+ */
 
 export default function Error() {
     return (

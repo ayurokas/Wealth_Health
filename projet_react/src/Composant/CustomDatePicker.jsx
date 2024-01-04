@@ -7,7 +7,16 @@ import '../css/datepicker.css';
 import PropTypes from 'prop-types';
 
 
-// Définition du composant CalendarDatepicker
+/**
+ * Composant React pour afficher un sélecteur de date.
+ * @component
+ * @param {Object} props - Les propriétés du composant.
+ * @param {Date} props.selected - La date sélectionnée.
+ * @param {Function} props.onChange - La fonction de rappel appelée lorsqu'une nouvelle date est sélectionnée.
+ * @param {string} props.id - L'identifiant de l'élément de formulaire.
+ * @param {boolean} props.submitted - Indique si le formulaire a été soumis.
+ */
+
 const CalendarDatepicker = ({ selected, onChange, id, submitted }) => {
   const isError = submitted && !selected;
 

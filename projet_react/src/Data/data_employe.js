@@ -24,6 +24,33 @@ const employees = [
     city:'shibuya',
     state:'japan',
     zipCode:'592000'
+},
+
+{
+    id: 3,
+    firstName:'capucine',
+    lastName: 'glardon',
+    startDate:'2020-11-12',
+    department: 'Sales',
+    dateBirth:'1995-01-1',
+    street:'rue bogoss',
+    city:'shibuya',
+    state:'japan',
+    zipCode:'592000'
+},
+
+{
+    id: 4,
+    firstName:'tim',
+    lastName: 'ely',
+    startDate:'2010-11-12',
+    department: 'Sales',
+    dateBirth:'1995-01-1',
+    street:'rue bogoss',
+    city:'shibuya',
+    state:'japan',
+    zipCode:'592000'
 }
+
 ];
 export default employees

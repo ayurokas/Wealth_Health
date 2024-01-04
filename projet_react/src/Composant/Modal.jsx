@@ -2,8 +2,22 @@ import React, { useEffect } from 'react';
 import '../css/modal.css';
 import PropTypes from 'prop-types';
 
+/**
+ * Composant React pour afficher une modal.
+ * @component
+ * @param {Object} props - Les propriétés du composant.
+ * @param {boolean} props.isOpen - Indique si la modal est ouverte ou fermée.
+ * @param {ReactNode} props.children - Les éléments enfants à afficher dans la modal.
+ * @param {Function} props.onClose - La fonction de rappel appelée lorsque la modal doit être fermée.
+ */
+
 const Modal = ({ isOpen, children, onClose }) => {
 
+  /**
+   * Gère la fermeture de la modal lorsque la touche "Escape" est pressée.
+   * @param {Event} event - L'événement de pression de touche.
+   */
+   
   const handleEscape = (event) => {
     if (event.keyCode === 27) {
       onClose();

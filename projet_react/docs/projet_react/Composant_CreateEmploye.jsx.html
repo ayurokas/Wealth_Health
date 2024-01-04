@@ -1,4 +1,32 @@
-import React, { useState } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Composant/CreateEmploye.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Composant/CreateEmploye.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
 import CalendarDatepicker from "../Composant/CustomDatePicker";
 import { addEmployee } from "../Redux/reducers/employer";
@@ -118,77 +146,99 @@ const validateForm = () => {
   const handleCloseModal = () => setShowModal(false);
 
   return (
-    <div>
-      <form action="#" id="create-employee" onSubmit={handleSave}>
-        <fieldset className="personal-info">
-          <legend>Informations Personnelles</legend>
-          <label>Prénom
-            <input type="text" onChange={(e) => setFirstName(e.target.value)} />
-            {errors.firstName && <div className="error">{errors.firstName}</div>}
-          </label>
-          <label>Nom
-            <input type="text" onChange={(e) => setLastName(e.target.value)} />
-            {errors.lastName && <div className="error">{errors.lastName}</div>}
-          </label>
-          <label>Date de Naissance
-            <CalendarDatepicker
+    &lt;div>
+      &lt;form action="#" id="create-employee" onSubmit={handleSave}>
+        &lt;fieldset className="personal-info">
+          &lt;legend>Informations Personnelles&lt;/legend>
+          &lt;label>Prénom
+            &lt;input type="text" onChange={(e) => setFirstName(e.target.value)} />
+            {errors.firstName &amp;&amp; &lt;div className="error">{errors.firstName}&lt;/div>}
+          &lt;/label>
+          &lt;label>Nom
+            &lt;input type="text" onChange={(e) => setLastName(e.target.value)} />
+            {errors.lastName &amp;&amp; &lt;div className="error">{errors.lastName}&lt;/div>}
+          &lt;/label>
+          &lt;label>Date de Naissance
+            &lt;CalendarDatepicker
               dateFormat="dd/MM/yyyy"
               selected={dateBirth}
               onChange={(date) => setDateBirth(date)}
               id="dateBirth" 
             />
-            {errors.dateBirth && <div className="error">{errors.dateBirth}</div>}
-          </label>
-        </fieldset>
+            {errors.dateBirth &amp;&amp; &lt;div className="error">{errors.dateBirth}&lt;/div>}
+          &lt;/label>
+        &lt;/fieldset>
 
-        <fieldset className="address">
-          <legend>Address</legend>
-          <label>Street
-            <input type="text" onChange={(e) => setStreet(e.target.value)} />
-            {errors.street && <div className="error">{errors.street}</div>}
-          </label>
-          <label>City
-            <input type="text" onChange={(e) => setCity(e.target.value)} />
-            {errors.city && <div className="error">{errors.city}</div>}
-          </label>
-          <label>State
-          <CustomDropdown
+        &lt;fieldset className="address">
+          &lt;legend>Address&lt;/legend>
+          &lt;label>Street
+            &lt;input type="text" onChange={(e) => setStreet(e.target.value)} />
+            {errors.street &amp;&amp; &lt;div className="error">{errors.street}&lt;/div>}
+          &lt;/label>
+          &lt;label>City
+            &lt;input type="text" onChange={(e) => setCity(e.target.value)} />
+            {errors.city &amp;&amp; &lt;div className="error">{errors.city}&lt;/div>}
+          &lt;/label>
+          &lt;label>State
+          &lt;CustomDropdown
               options={states.map(el => ({ label: el.name, value: el.value }))}
               onChange={option => setState(option.value)}
               placeholder="Select a state"
             />
-            {errors.state && <div className="error">{errors.state}</div>}
-          </label>
-          <label>Zip Code
-            <input type="text" onChange={(e) => setZipCode(e.target.value)} />
-            {errors.zipCode && <div className="error">{errors.zipCode}</div>}
-          </label>
-        </fieldset>
-        <fieldset className="employment">
-          <legend>Emploi</legend>
-          <label>Date de Début
-            <CalendarDatepicker
+            {errors.state &amp;&amp; &lt;div className="error">{errors.state}&lt;/div>}
+          &lt;/label>
+          &lt;label>Zip Code
+            &lt;input type="text" onChange={(e) => setZipCode(e.target.value)} />
+            {errors.zipCode &amp;&amp; &lt;div className="error">{errors.zipCode}&lt;/div>}
+          &lt;/label>
+        &lt;/fieldset>
+        &lt;fieldset className="employment">
+          &lt;legend>Emploi&lt;/legend>
+          &lt;label>Date de Début
+            &lt;CalendarDatepicker
               dateFormat="dd/MM/yyyy"
               selected={startDate}
               onChange={(date) => setStartDate(date)}
               id="startDate"
             />
-            {errors.startDate && <div className="error">{errors.startDate}</div>}
-          </label>
-          <label>Département
-            <CustomDropdown
+            {errors.startDate &amp;&amp; &lt;div className="error">{errors.startDate}&lt;/div>}
+          &lt;/label>
+          &lt;label>Département
+            &lt;CustomDropdown
               options={departments.map(el => ({ label: el.name, value: el.value }))}
               onChange={option => setDepartment(option.value)}
               placeholder="Select a Department"
             />
-            {errors.department && <div className="error">{errors.department}</div>}
-          </label>
-        </fieldset>
-        <input type="submit" value="Submit" />
-      </form>
-      <Modal isOpen={showModal} onClose={handleCloseModal}>
-        <div>Lemployé a été créé avec succès !</div>
-      </Modal>
-    </div>
+            {errors.department &amp;&amp; &lt;div className="error">{errors.department}&lt;/div>}
+          &lt;/label>
+        &lt;/fieldset>
+        &lt;input type="submit" value="Submit" />
+      &lt;/form>
+      &lt;Modal isOpen={showModal} onClose={handleCloseModal}>
+        &lt;div>Lemployé a été créé avec succès !&lt;/div>
+      &lt;/Modal>
+    &lt;/div>
   );
-}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-employeeSlice.html">employeeSlice</a></li></ul><h3>Global</h3><ul><li><a href="global.html#CalendarDatepicker">CalendarDatepicker</a></li><li><a href="global.html#Modal">Modal</a></li><li><a href="global.html#store">store</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Jan 04 2024 15:57:59 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

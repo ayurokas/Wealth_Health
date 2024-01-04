@@ -1,7 +1,13 @@
 import React, { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../img/logo.webp';
+// Importez le composant CreateEmploye de manière asynchrone
 const Form = React.lazy(() => import('../Composant/CreateEmploye')); 
+
+/**
+ * Composant de création d'employé.
+ * @component
+ */
 
 export default function CreateEmployee() {
   return (
